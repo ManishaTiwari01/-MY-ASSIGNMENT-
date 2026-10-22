@@ -1,0 +1,145 @@
+Create a portfolio page with working internal navigation.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #243b55;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #141e30;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #64d8cb;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 850px;
+            margin: auto;
+            min-height: 150px;
+        }
+
+        h2 {
+            color: #243b55;
+        }
+
+        .project {
+            background-color: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #243b55;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <p>BCA AI Student | Learner | Future Developer</p>
+    </header>
+
+    <!-- Internal navigation menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Hello! Welcome to my portfolio website.</p>
+            <p>I am a student learning programming and web development.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am pursuing BCA with Artificial Intelligence.
+                I enjoy learning new technologies, solving problems,
+                and building projects.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML and CSS</li>
+                <li>Java Programming</li>
+                <li>MS Excel and PowerPoint</li>
+                <li>Teamwork and Communication</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project">
+                <h3>Personal Portfolio</h3>
+                <p>A website introducing me and my skills.</p>
+            </div>
+
+            <div class="project">
+                <h3>AI-Based Stress Assessment</h3>
+                <p>A project idea focused on supporting people
+                   through a stress assessment website.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: yourname@example.com</p>
+            <p>Location: India</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

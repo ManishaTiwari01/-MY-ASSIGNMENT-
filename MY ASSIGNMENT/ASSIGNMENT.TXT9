@@ -1,0 +1,75 @@
+Debug and correct a supplied buggy HTML file.
+
+BUGGY CODE 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Resume</title>
+</head>
+<body>
+
+    <h1>Manisha Tiwari<h1>
+    <p>BCA Student - Artificial Intelligence<p>
+
+    <h2>Education<h2>
+    <p>BCA with AI - Invertis University, Bareilly
+
+    <h2>Skills</h2>
+    <ul>
+        <li>Java
+        <li>HTML and CSS</li>
+        <li>MS Excel</li>
+    </ul>
+
+    <p>Thank you for reading my resume.
+
+</body>
+</html>
+
+NOW CORRECT CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+</head>
+<body>
+
+    <header>
+        <h1>Manisha Tiwari</h1>
+        <p>BCA Student - Artificial Intelligence</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Education</h2>
+            <p>BCA with AI - Invertis University, Bareilly</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>HTML and CSS</li>
+                <li>MS Excel</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank you for reading my resume.</p>
+    </footer>
+
+</body>
+</html>
+  
+
+
+  CORRECTIONS;
+   Corrected closing heading tags, such as <h1> to </h1>.
+ Added missing closing </p> tags.
+ Closed all <li> list items.
+ Added lang="en" and character encoding.
+ Used semantic tags: <header>, <main>, <section>, and <footer>.

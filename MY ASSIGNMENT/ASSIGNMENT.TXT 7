@@ -1,0 +1,47 @@
+Design a simple resume-style page using only text elements.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+</head>
+<body>
+
+    <h1>Manisha Tiwari</h1>
+    <p>BCA Student - Artificial Intelligence</p>
+    <p>Email: your-email@example.com</p>
+    <p>Phone: Your Phone Number</p>
+
+    <h2>Career Objective</h2>
+    <p>
+        I am a BCA student interested in programming,
+        artificial intelligence, and web development.
+        I want to learn new skills and build useful projects.
+    </p>
+
+    <h2>Education</h2>
+    <p>BCA with AI - Invertis University, Bareilly</p>
+    <p>Class 12th - CBSE Board</p>
+    <p>Class 10th - CBSE Board</p>
+
+    <h2>Technical Skills</h2>
+    <p>Java, HTML, CSS, MS Excel, PowerPoint</p>
+
+    <h2>Projects</h2>
+    <p>AI-Based Stress Assessment Website</p>
+    <p>Participated in a hackathon project.</p>
+
+    <h2>Soft Skills</h2>
+    <p>Teamwork, Leadership, Communication, Problem-Solving</p>
+
+    <h2>Hobbies</h2>
+    <p>Coding, Cooking, Learning New Things</p>
+
+    <h2>Languages</h2>
+    <p>Hindi and English</p>
+
+</body>
+</html>
+

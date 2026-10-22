@@ -1,0 +1,91 @@
+Refactor the resume page to use semantic containers instead of plain text blocks.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+</head>
+<body>
+
+    <header>
+        <h1>Manisha Tiwari</h1>
+        <p>BCA Student - Artificial Intelligence</p>
+        <address>
+            Email: your-email@example.com<br>
+            Phone: Your Phone Number
+        </address>
+    </header>
+
+    <main>
+        <section>
+            <h2>Career Objective</h2>
+            <p>
+                I am a BCA student interested in programming,
+                artificial intelligence, and web development.
+                I want to learn new skills and build useful projects.
+            </p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <article>
+                <h3>BCA with AI</h3>
+                <p>Invertis University, Bareilly</p>
+            </article>
+            <article>
+                <h3>Class 12th</h3>
+                <p>CBSE Board</p>
+            </article>
+            <article>
+                <h3>Class 10th</h3>
+                <p>CBSE Board</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>HTML and CSS</li>
+                <li>MS Excel</li>
+                <li>PowerPoint</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <article>
+                <h3>AI-Based Stress Assessment Website</h3>
+                <p>Participated in a hackathon project focused on stress assessment and support.</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Teamwork</li>
+                <li>Leadership</li>
+                <li>Communication</li>
+                <li>Problem-solving</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hobbies</h2>
+            <p>Coding, cooking, and learning new things.</p>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <p>Hindi and English</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Resume of Manisha Tiwari</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+Submit the finished personal-introduction HTML page.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Introduction</title>
+</head>
+<body>
+
+    <header>
+        <h1>Personal Introduction</h1>
+        <p>Hello! My name is Manisha Tiwari.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>
+                I am a BCA student specializing in Artificial Intelligence
+                at Invertis University, Bareilly.
+            </p>
+            <p>
+                I am passionate about technology, programming,
+                and learning new things.
+            </p>
+        </section>
+
+        <section>
+            <h2>My Education</h2>
+            <p>Course: Bachelor of Computer Applications (BCA with AI)</p>
+            <p>University: Invertis University, Bareilly</p>
+        </section>
+
+        <section>
+            <h2>My Skills</h2>
+            <ul>
+                <li>Java Programming</li>
+                <li>HTML and CSS</li>
+                <li>MS Excel and PowerPoint</li>
+                <li>Teamwork and Leadership</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Coding</li>
+                <li>Cooking</li>
+                <li>Learning new technologies</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>My Goal</h2>
+            <p>
+                My goal is to improve my technical skills and become
+                a successful professional in the field of technology.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank you for visiting my personal introduction page!</p>
+    </footer>
+
+</body>
+</html>
