@@ -1,0 +1,141 @@
+Build a job-application style form using every input type covered.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+</head>
+<body>
+
+    <header>
+        <h1>Job Application Form</h1>
+        <p>Please complete the form to apply for a position.</p>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                <br><br>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+                <br><br>
+
+                <label for="time">Preferred Interview Time:</label>
+                <input type="time" id="time" name="time">
+                <br><br>
+
+                <label for="website">Portfolio Website:</label>
+                <input type="url" id="website" name="website"
+                       placeholder="https://example.com">
+                <br><br>
+
+                <label for="photo">Upload Resume:</label>
+                <input type="file" id="photo" name="resume">
+                <br><br>
+
+                <p>Gender:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Job Details</legend>
+
+                <label for="position">Select Position:</label>
+                <select id="position" name="position" required>
+                    <option value="">-- Select Position --</option>
+                    <option value="developer">Web Developer</option>
+                    <option value="designer">Web Designer</option>
+                    <option value="analyst">Data Analyst</option>
+                    <option value="intern">Software Intern</option>
+                </select>
+                <br><br>
+
+                <label for="experience">Years of Experience:</label>
+                <input type="number" id="experience" name="experience"
+                       min="0" max="50" value="0">
+                <br><br>
+
+                <label for="salary">Expected Salary:</label>
+                <input type="range" id="salary" name="salary"
+                       min="10000" max="100000" step="5000">
+                <br><br>
+
+                <label for="color">Choose a Profile Theme Color:</label>
+                <input type="color" id="color" name="color">
+                <br><br>
+
+                <label for="skills">Search for a Skill:</label>
+                <input type="search" id="skills" name="skills"
+                       placeholder="e.g. Java">
+                <br><br>
+
+                <label for="joining">Available Joining Month:</label>
+                <input type="month" id="joining" name="joining">
+                <br><br>
+
+                <label for="week">Preferred Training Week:</label>
+                <input type="week" id="week" name="week">
+                <br><br>
+
+                <label for="availability">Available From:</label>
+                <input type="datetime-local" id="availability"
+                       name="availability">
+                <br><br>
+
+                <label for="coverletter">Cover Letter:</label>
+                <textarea id="coverletter" name="coverletter"
+                          rows="5" cols="35"
+                          placeholder="Write about yourself"></textarea>
+                <br><br>
+
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    I confirm that the information is correct.
+                </label>
+            </fieldset>
+
+            <br>
+
+            <input type="hidden" name="form_type" value="job_application">
+
+            <button type="submit">Submit Application</button>
+            <button type="reset">Reset Form</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Job Application Portal</p>
+    </footer>
+
+</body>
+</html>

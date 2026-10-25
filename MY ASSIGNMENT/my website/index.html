@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Design Studio</title>
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --text: #f8fafc;
+            --spacing: 28px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+        }
+
+        header {
+            padding: 20px 8%;
+            background: var(--surface);
+        }
+
+        header span {
+            color: #c4b5fd;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: var(--spacing);
+            border: 3px solid var(--primary);
+            margin: 30px 0;
+            border-radius: 18px;
+        }
+
+        h1 {
+            color: #c4b5fd;
+        }
+
+        p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>✨ Design<span>Studio</span></h2>
+    </header>
+
+    <main>
+        <h1>Welcome to My Website!</h1>
+        <p>Learning CSS design tokens and the box model.</p>
+
+        <div class="card">
+            <h2>🎨 Beautiful Design</h2>
+            <p>
+                This is my feature card. It uses CSS padding,
+                a border, margin, and reusable colour variables.
+            </p>
+            <button>Explore More</button>
+        </div>
+    </main>
+
+    <footer>Created with HTML and CSS ❤️</footer>
+
+</body>
+</html>

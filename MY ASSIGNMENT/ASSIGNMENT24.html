@@ -1,0 +1,50 @@
+Create a small design-token stylesheet (colours, font sizes) using CSS variables.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Design Tokens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>✨ Design<span>Tokens</span></h2>
+        <a href="#about">Explore</a>
+    </nav>
+
+    <main class="container" id="about">
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h1>Design with <span>CSS Variables</span></h1>
+            <p>
+                Beautiful designs start with smart design tokens.
+                Change colours and font sizes in one place!
+            </p>
+
+            <div class="colors">
+                <div class="color-box blue">Primary</div>
+                <div class="color-box purple">Secondary</div>
+                <div class="color-box pink">Accent</div>
+            </div>
+
+            <button onclick="showMessage()">Explore Design 🚀</button>
+            <p id="message"></p>
+        </div>
+    </main>
+
+    <footer>Made with ❤️ using HTML & CSS</footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").textContent =
+                "Keep creating amazing designs! ✨";
+        }
+    </script>
+
+</body>
+</html>

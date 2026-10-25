@@ -1,0 +1,468 @@
+Submit the styled multi-page project with a short note on design choices.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Studio</title>
+
+    <style>
+        /* CSS DESIGN TOKENS */
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --accent: #ec4899;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+
+            --font-small: 14px;
+            --font-medium: 17px;
+            --font-large: 26px;
+            --font-heading: 46px;
+
+            --spacing: 24px;
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 22px 8%;
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: var(--font-large);
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        nav a:hover {
+            color: #c4b5fd;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background:
+                radial-gradient(circle at top left, #4338ca, transparent 50%),
+                var(--background);
+        }
+
+        .tag {
+            color: #c4b5fd;
+            font-size: var(--font-small);
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: var(--font-heading);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        h1 span {
+            color: #c4b5fd;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--muted);
+            font-size: var(--font-medium);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(
+                90deg, var(--primary), var(--secondary)
+            );
+            color: white;
+            text-decoration: none;
+            font-size: var(--font-medium);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 65px 8%;
+            scroll-margin-top: 85px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: var(--font-large);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--spacing);
+        }
+
+        .card {
+            padding: 28px;
+            border: 1px solid #334155;
+            border-radius: var(--radius);
+            background: var(--surface);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .emoji {
+            font-size: 36px;
+        }
+
+        .card h3 {
+            margin: 12px 0;
+        }
+
+        .card p,
+        .about-text {
+            color: var(--muted);
+            font-size: var(--font-medium);
+        }
+
+        /* ABOUT SECTION */
+        .about-text {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .palette {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .swatch {
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: var(--font-small);
+            font-weight: bold;
+        }
+
+        .blue { background: var(--primary); }
+        .purple { background: var(--secondary); }
+        .pink { background: var(--accent); }
+
+        /* CONTACT SECTION */
+        .contact-form {
+            max-width: 550px;
+            margin: auto;
+            display: grid;
+            gap: 12px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #475569;
+            border-radius: 10px;
+            background: var(--surface);
+            color: var(--text);
+            font: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid var(--primary);
+        }
+
+        .contact-form label {
+            font-weight: bold;
+        }
+
+        /* DESIGN CHOICES */
+        .notes {
+            max-width: 750px;
+            margin: auto;
+            padding: 28px;
+            background: var(--surface);
+            border-radius: var(--radius);
+        }
+
+        .notes li {
+            margin: 10px 0 10px 22px;
+            color: var(--muted);
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid #334155;
+        }
+
+        @media (max-width: 700px) {
+            :root {
+                --font-heading: 34px;
+            }
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                margin-left: 5px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Design<span>Studio.</span></div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#design">Design Notes</a>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <header class="hero" id="home">
+        <span class="tag">CREATIVE DESIGN • SMART CSS</span>
+
+        <h1>Design better.<br>
+            <span>Build smarter.</span>
+        </h1>
+
+        <p>
+            Discover how CSS design tokens make websites
+            beautiful, consistent, and easy to maintain.
+        </p>
+
+        <a href="#about" class="btn">Explore Our Project →</a>
+    </header>
+
+    <main>
+
+        <!-- FEATURES -->
+        <section>
+            <h2 class="section-title">What Makes Us Different?</h2>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="emoji">🎨</div>
+                    <h3>Beautiful Colours</h3>
+                    <p>
+                        Reusable colour variables create a
+                        consistent visual identity.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="emoji">🔤</div>
+                    <h3>Clear Typography</h3>
+                    <p>
+                        Consistent font sizes make content
+                        easier to read.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="emoji">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>
+                        The layout adapts to mobile phones
+                        and desktop screens.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2 class="section-title">About Our Project</h2>
+
+            <p class="about-text">
+                CSS design tokens are reusable values stored
+                in CSS variables. They help developers manage
+                colours, font sizes, and spacing in one place.
+                Changing a token updates every element that
+                uses that variable.
+            </p>
+
+            <h3 class="section-title" style="margin-top: 35px;">
+                Our Colour Palette
+            </h3>
+
+            <div class="palette">
+                <div class="swatch blue">Primary Blue</div>
+                <div class="swatch purple">Secondary Purple</div>
+                <div class="swatch pink">Accent Pink</div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2 class="section-title">Let's Connect ✉️</h2>
+
+            <form class="contact-form" id="contactForm">
+                <label for="name">Y</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="message">Your Message</label>
+                <textarea
+                    id="message"
+                    rows="4"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Submit Message →
+                </button>
+
+                <p id="formMessage" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <!-- DESIGN CHOICES -->
+        <section id="design">
+            <h2 class="section-title">Design Choices</h2>
+
+            <div class="notes">
+                <ul>
+                    <li>
+                        <strong>Colours:</strong>
+                        Dark navy with purple, blue, and pink
+                        creates a modern appearance.
+                    </li>
+                    <li>
+                        <strong>CSS Variables:</strong>
+                        Centralised tokens make styling easy
+                        to update and maintain.
+                    </li>
+                    <li>
+                        <strong>Typography:</strong>
+                        Different font sizes create a clear
+                        visual hierarchy.
+                    </li>
+                    <li>
+                        <strong>Layout:</strong>
+                        Cards, spacing, and gradients improve
+                        the visual appearance.
+                    </li>
+                    <li>
+                        <strong>Responsive Design:</strong>
+                        Media queries adapt the layout to
+                        smaller screens.
+                    </li>
+                    <li>
+                        <strong>Consistency:</strong>
+                        One stylesheet keeps the entire
+                        website visually consistent.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Design Studio | Built with ❤️ using HTML & CSS
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                document.getElementById("formMessage").textContent =
+                    "Thanks! This is a demo form; no message was sent.";
+
+                this.reset();
+            }
+        );
+    </script>
+
+</body>
+</html>
+

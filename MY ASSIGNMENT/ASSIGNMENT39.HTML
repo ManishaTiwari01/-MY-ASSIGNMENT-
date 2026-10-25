@@ -1,0 +1,456 @@
+Submit the finished Grid-based project.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive student dashboard built using CSS Grid">
+  <title>Student Dashboard | Grid Project</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* Main Grid Layout */
+    .dashboard {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      grid-template-rows: 75px 1fr 55px;
+      grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      background: #172554;
+      color: white;
+      padding: 28px 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .sidebar nav a {
+      display: block;
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 14px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      box-shadow: 0 2px 8px #00000008;
+      gap: 15px;
+    }
+
+    .header h1 {
+      font-size: 23px;
+    }
+
+    .profile {
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 12px 16px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    .main {
+      grid-area: main;
+      padding: 30px;
+    }
+
+    .welcome {
+      margin-bottom: 25px;
+    }
+
+    .welcome h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* Statistic Cards */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px #0f172a0a;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card .icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #64748b;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .card .number {
+      font-size: 30px;
+      font-weight: bold;
+      color: #1e293b;
+    }
+
+    .card .note {
+      margin-top: 10px;
+      color: #16a34a;
+      font-size: 13px;
+    }
+
+    /* Lower Grid Sections */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px #0f172a0a;
+      min-width: 0;
+    }
+
+    .panel h2 {
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    /* Progress Bars */
+    .course {
+      margin-bottom: 22px;
+    }
+
+    .course-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .progress {
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    .blue { width: 85%; background: #3b82f6; }
+    .purple { width: 70%; background: #8b5cf6; }
+    .green { width: 92%; background: #22c55e; }
+
+    /* Recent Activity */
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+
+    .activity-icon {
+      background: #eff6ff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .activity-item p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .activity-item small {
+      display: block;
+      color: #64748b;
+      margin-top: 5px;
+    }
+
+    /* Footer */
+    .footer {
+      grid-area: footer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      color: #64748b;
+      font-size: 13px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* Tablet */
+    @media (max-width: 1000px) {
+      .dashboard {
+        grid-template-columns: 190px 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        padding: 22px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 650px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+      }
+
+      .header {
+        padding: 18px;
+      }
+
+      .header h1 {
+        font-size: 19px;
+      }
+
+      .sidebar {
+        padding: 12px;
+      }
+
+      .logo {
+        margin: 0 0 10px;
+        font-size: 20px;
+      }
+
+      .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .sidebar nav a {
+        padding: 10px;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .main {
+        padding: 18px;
+      }
+
+      .welcome h2 {
+        font-size: 23px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .profile {
+        padding: 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <div class="logo">🎓 EduSpace</div>
+
+      <nav aria-label="Main navigation">
+        <a href="#overview" class="active">🏠 Dashboard</a>
+        <a href="#courses">📚 My Courses</a>
+        <a href="#activity">📝 Assignments</a>
+        <a href="#courses">📊 My Progress</a>
+        <a href="#footer">⚙️ Settings</a>
+      </nav>
+    </aside>
+
+    <header class="header">
+      <h1>Student Dashboard</h1>
+      <div class="profile">👩‍🎓 Student</div>
+    </header>
+
+    <main class="main" id="overview">
+      <section class="welcome">
+        <h2>Welcome Back! 👋</h2>
+        <p>Keep learning, stay consistent, and achieve your goals.</p>
+      </section>
+
+      <section class="stats" aria-label="Student statistics">
+        <article class="card">
+          <div class="icon">📚</div>
+          <h3>Enrolled Courses</h3>
+          <div class="number">06</div>
+          <p class="note">Keep up the great work!</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">📝</div>
+          <h3>Assignments Done</h3>
+          <div class="number">18</div>
+          <p class="note">↑ Progressing well</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🏆</div>
+          <h3>Overall Progress</h3>
+          <div class="number">82%</div>
+          <p class="note">Your effort matters!</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+
+        <article class="panel" id="courses">
+          <h2>📈 Course Progress</h2>
+
+          <div class="course">
+            <div class="course-info">
+              <span>HTML &amp; CSS</span>
+              <strong>85%</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar blue"></div>
+            </div>
+          </div>
+
+          <div class="course">
+            <div class="course-info">
+              <span>Java Programming</span>
+              <strong>70%</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar purple"></div>
+            </div>
+          </div>
+
+          <div class="course">
+            <div class="course-info">
+              <span>Computer Fundamentals</span>
+              <strong>92%</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar green"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" id="activity">
+          <h2>🔔 Recent Activity</h2>
+
+          <div class="activity-item">
+            <div class="activity-icon">✅</div>
+            <div>
+              <p><strong>HTML Assignment</strong></p>
+              <small>Completed successfully</small>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-icon">📖</div>
+            <div>
+              <p><strong>Java Practice</strong></p>
+              <small>Continue learning today</small>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-icon">🎯</div>
+            <div>
+              <p><strong>Weekly Goal</strong></p>
+              <small>Keep moving forward!</small>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      © 2026 EduSpace Student Dashboard | Built with HTML &amp; CSS Grid
+    </footer>
+
+  </div>
+</body>
+</html>
